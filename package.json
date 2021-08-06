@@ -1,0 +1,31 @@
+{
+  "name": "artsy-lens-photography-server",
+  "version": "1.0.0",
+  "description": "This project is basically based on house shifting.\r Customer can order a service, and review his/her service status.\r An Admin can change the order status and customer will see in his dashboard.\r Customer can add a review and it will show in the home page.\r Similarly an Admin can add a service and it will show in the home page.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Porgramming-Hero-web-course/complete-website-server-SakibulHasaan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Porgramming-Hero-web-course/complete-website-server-SakibulHasaan/issues"
+  },
+  "homepage": "https://github.com/Porgramming-Hero-web-course/complete-website-server-SakibulHasaan#readme"
+}
