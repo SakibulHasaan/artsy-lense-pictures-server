@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('Move-n-Settle Server')
+  res.send('Artsy-Lens-Photography Server')
 })
 
 console.log('Server is listening on 4000')
@@ -21,22 +21,25 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 client.connect(err => {
   const ServicesCollection = client.db(`${process.env.DB_NAME}`).collection("Services");
+  const UsersCollection = client.db(`${process.env.DB_NAME}`).collection("Users");
   const OrdersCollection = client.db(`${process.env.DB_NAME}`).collection("Orders");
-  const ReviewsCollection = client.db(`${process.env.DB_NAME}`).collection("Reviews");
   const AdminCollection = client.db(`${process.env.DB_NAME}`).collection("Admin");
   console.log("DB Connected");
 
 
-  app.get('/allServices', (req, res) => {
-    ServicesCollection.find()
-      .toArray((err, items) => {
-        // console.log(items)
-        res.send(items);
+  app.get('/user/:email', (req, res) => {
+    const email = ObjectID(req.params.email);
+    console.log(email);
+    UsersCollection.findOne({ "_id": id })
+      .then((item) => {
+        res.send([item])
+        console.log(item)
       })
   });
 
-  app.get('/allReviews', (req, res) => {
-    ReviewsCollection.find()
+
+  app.get('/allServices', (req, res) => {
+    ServicesCollection.find()
       .toArray((err, items) => {
         // console.log(items)
         res.send(items);
